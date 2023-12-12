@@ -1,0 +1,55 @@
+{% include "store/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    body{
+        background-color: gray;
+    }
+</style>
+
+<body>
+    <br><br>
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Welcome, {{user|capfirst}}</h4>
+        <hr>
+
+        <p>This is your dashboard where you can perform any of the following:</p>
+        <li>Track your orders</li>
+        <li>Manage your account</li>
+        <li>Logout from your account</li>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Track your orders</h4>
+        <hr>
+        <p>Track all of your orders here...</p>
+        <a class="btn btn-primary navbar-btn text-white" type="button" href={% url 'user-logout' %}> <i class="fa fa-first-order" aria-hidden="true"></i> &nbsp; My Orders </a>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Manage your account</h4>
+        <hr>
+        <p>Update or delete your account</p>
+        <a class="btn btn-primary navbar-btn text-white" type="button" href={% url 'profile-management' %}> <i class="fa fa-user" aria-hidden="true"></i> &nbsp; Profile Management </a>
+    </div>
+
+    <br>
+
+    <div class="container bg-white shadow-md p-5 form-layout">
+        <h4>Manage shipping</h4>
+        <hr>
+        <p>Enter in a shipping address</p>
+        <a class="btn btn-primary navbar-btn text-white" type="button" href={% url 'manage-shipping' %}> Manage Shipping </a>
+    </div>
+
+    <br>
+    
+</body>
+
+{% endblock content %}
